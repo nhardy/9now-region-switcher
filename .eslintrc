@@ -1,0 +1,6 @@
+{
+	"extends": "eslint-config-nhardy",
+  "globals": {
+    "chrome": false
+  }
+}

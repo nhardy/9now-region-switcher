@@ -1,0 +1,72 @@
+{
+  "name": "9now-region-switcher",
+  "version": "0.0.0",
+  "description": "Allows a user to determine the region for 9Now TV Guide and Livestreams",
+  "engines": {
+    "node": "^5.9.0",
+    "npm": "^3.7.3"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run webpack && npm run manifest:version && npm run copy",
+    "clean": "rm -rf ./dist/*",
+    "copy": "npm run popup:copy && npm run icon:copy && npm run manifest:copy",
+    "icon:copy": "cp ./src/icon.png ./dist/icon.png",
+    "lint": "./node_modules/.bin/eslint ./webpack/config.babel.js ./src",
+    "manifest:copy": "cp ./src/manifest.json ./dist/manifest.json",
+    "manifest:version": "cd ./src && ../node_modules/.bin/mversion $npm_package_version",
+    "popup:copy": "cp ./src/popup.html ./dist/popup.html",
+    "postversion": "NODE_ENV=production npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --config ./webpack/config.babel.js",
+    "webpack:watch": "npm run clean && npm run copy && webpack --watch --config ./webpack/config.babel.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhardy/9now-region-switcher.git"
+  },
+  "keywords": [
+    "9now",
+    "geolocation"
+  ],
+  "author": "Nathan Hardy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nhardy/9now-region-switcher/issues"
+  },
+  "homepage": "https://github.com/nhardy/9now-region-switcher#readme",
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-plugin-syntax-object-rest-spread": "^6.5.0",
+    "babel-plugin-transform-class-properties": "^6.6.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es2015-for-of": "^6.6.0",
+    "babel-plugin-transform-es2015-function-name": "^6.5.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.7.0",
+    "babel-plugin-transform-es2015-parameters": "^6.7.0",
+    "babel-plugin-transform-es2015-sticky-regex": "^6.5.0",
+    "babel-plugin-transform-es2015-unicode-regex": "^6.5.0",
+    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.2.0",
+    "eslint-config-nhardy": "^0.0.3",
+    "exports-loader": "^0.6.3",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "imports-loader": "^0.6.5",
+    "mversion": "^1.10.1",
+    "style-loader": "^0.13.0",
+    "stylus-loader": "^1.5.1",
+    "svg-react-loader": "^0.3.3",
+    "webpack": "^1.12.14",
+    "whatwg-fetch": "^0.11.0"
+  },
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-chrome-redux": "^0.0.6",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.1",
+    "redux": "^3.3.1"
+  }
+}

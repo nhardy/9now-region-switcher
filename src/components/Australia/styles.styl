@@ -1,0 +1,21 @@
+.root
+  svg
+    width: 100%
+    height: auto
+
+:global
+  .svg-map-state
+    cursor: pointer
+
+    path
+      fill: #b3b3b3
+      transition: fill 250ms ease;
+
+    &:local(.active)
+    &:hover
+      path
+        fill: #0084cc
+
+  .svg-map-state:not(.svg-map-act)
+    path
+      stroke: none

@@ -1,0 +1,26 @@
+registerFont(name, weight, isItalic = false)
+  $_fontPath = 'src/assets/fonts/source-sans-pro/'
+  $_fontPath += name
+  if isItalic
+    $_fontPath += '-italic'
+  $_fontPath += '.woff2'
+
+  @font-face
+    font-family: SourceSansPro
+    src: url($_fontPath) format('woff2')
+    font-weight: weight
+    if isItalic
+      font-style: italic
+
+registerFont('black', 900)
+registerFont('black', 900, true)
+registerFont('bold', 700)
+registerFont('bold', 700, true)
+registerFont('semibold', 600)
+registerFont('semibold', 600, true)
+registerFont('regular', 400)
+registerFont('regular', 400, true)
+registerFont('light', 300)
+registerFont('light', 300, true)
+registerFont('extra-light', 200)
+registerFont('extra-light', 200, true)

@@ -15,7 +15,7 @@
     "manifest:copy": "cp ./src/manifest.json ./dist/manifest.json",
     "manifest:version": "cd ./src && ../node_modules/.bin/mversion $npm_package_version",
     "popup:copy": "cp ./src/popup.html ./dist/popup.html",
-    "postversion": "NODE_ENV=production npm run build",
+    "version": "NODE_ENV=production npm run build && git add -A .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --config ./webpack/config.babel.js",
     "webpack:watch": "npm run clean && npm run copy && webpack --watch --config ./webpack/config.babel.js"

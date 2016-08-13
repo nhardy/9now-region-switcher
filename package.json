@@ -1,6 +1,6 @@
 {
   "name": "9now-region-switcher",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Allows a user to determine the region for 9Now TV Guide and Livestreams",
   "engines": {
     "node": "^5.9.0",

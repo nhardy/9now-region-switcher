@@ -1,4 +1,5 @@
 import path from 'path';
+
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import {
   DefinePlugin,
@@ -31,7 +32,7 @@ export default {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel',
       },
       {
         test: /\.svg$/,
@@ -40,8 +41,7 @@ export default {
       {
         test: /\.styl$/,
         loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader?modules&localIdentName=[path][name]---[local]---[hash:base64:5]!stylus-loader'
+          'css?importLoaders=2&modules&localIdentName=[path][name]---[local]---[hash:base64:5]!stylus'
         ),
       },
       {
@@ -55,7 +55,7 @@ export default {
     alias: {
       src: SRC,
     },
-    extensions: ['', '.json', '.js'],
+    extensions: ['', '.json', '.js', '.styl'],
     modulesDirectories: [
       'src',
       'node_modules',

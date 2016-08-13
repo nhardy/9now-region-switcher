@@ -34,7 +34,7 @@ store.subscribe(() => {
   const state = store.getState();
   storage.set(state);
   chrome.tabs.query({
-    url: 'https://www.9now.com.au/*',
+    url: 'https://*.9now.com.au/*',
   }, tabs => {
     tabs.forEach(tab => chrome.tabs.reload(tab.id));
   });

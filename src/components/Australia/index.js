@@ -12,7 +12,7 @@ import styles from './styles.styl';
 
 const regex = new RegExp(`svg-map-(${Object.keys(states).join('|')})`);
 
-@connect(state => {
+@connect((state) => {
   return {
     state: state.location.state,
   };

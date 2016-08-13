@@ -6,7 +6,7 @@ import states from 'src/lib/states';
 import { selectState } from 'src/actions/location';
 
 
-@connect(state => {
+@connect((state) => {
   return {
     state: state.location.state,
   };
@@ -26,7 +26,7 @@ export default class SelectStateForm extends Component {
     const { state } = this.props;
     return (
       <form>
-        <label htmlFor="state">Current State: </label>
+        <label htmlFor="state">Current State:</label>
         <select
           name="state"
           ref="select"

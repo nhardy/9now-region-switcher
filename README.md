@@ -13,11 +13,11 @@ Requirements
 
 ### Running
 
-* Chrome 49+
+* Up-to-date stable Chrome
 
 ### Building
 
-* Node 5 w/ `npm`
+* Node 6 w/ `npm`
 
 How to Build
 ------------

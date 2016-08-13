@@ -28,7 +28,8 @@ chrome.webRequest.onBeforeRequest.addListener(
   {
     urls: ['https://*.9now.com.au/v*/pages/livestreams*'],
   },
-  ['blocking']);
+  ['blocking']
+);
 
 store.subscribe(() => {
   const state = store.getState();
